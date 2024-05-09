@@ -1,0 +1,3 @@
+.cudaTorch/
+.vscode/
+__pycache__/
