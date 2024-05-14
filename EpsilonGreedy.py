@@ -18,7 +18,7 @@ class EpsilonGreedy():
         self.epsilon = epsilon
         self.alpha = alpha
         self.lamb = lamb
-        self.stepPenalty = 0.01
+        self.stepPenalty = 0
         self.IM = IM
         self.counts = {(m,n): 1 for m in range(size) for n in range(size)}
 
