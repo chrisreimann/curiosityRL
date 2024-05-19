@@ -59,8 +59,10 @@ class EpsilonGreedy():
 
                 # Negative rewards for each step + curiosity reward
                 reward -= self.stepPenalty 
-                reward += self.curiosityCounts(obs)
                 returns += reward
+                
+                # Additional curiosity reward (excluded in learning graph)
+                reward += self.curiosityCounts(obs)
 
                 # Update Q-Values
                 new_max_q = max(self.q_values[obs])
@@ -99,7 +101,7 @@ class EpsilonGreedy():
 
                 obs, reward, terminated, truncated, info = self.env.step(action)
                 
-                # Negative rewards for each step
+                # Apply step penalty
                 reward -= self.stepPenalty 
                 rewards.append(reward)
             
